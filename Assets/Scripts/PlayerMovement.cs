@@ -7,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float runSpeed = 10f;
     [SerializeField] float jumpSpeed = 5f;
+    [SerializeField] Vector2 deathLaunch = new Vector2 (10f, 10f);
+    [SerializeField] GameObject snowball;
+    [SerializeField] Transform launchSpawn;
 
     Vector2 moveInput;
     Rigidbody2D myRigidbody;
@@ -30,6 +33,12 @@ public class PlayerMovement : MonoBehaviour
         Run();
         FlipSprite();
         Die();
+    }
+
+    void OnFire(InputValue value)
+    {
+        if(!isAlive) {return;}
+        Instantiate(snowball, launchSpawn.position, transform.rotation);
     }
 
     void OnMove(InputValue value)
@@ -75,10 +84,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Die()
     {
-        if(myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies")))
+        if(myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies", "Hazards")))
         {
             isAlive = false;
             myAnimator.SetTrigger("Dying");
+            myRigidbody.velocity = deathLaunch;
         }
     }
 

@@ -16,8 +16,8 @@ TagManager:
   - Background
   - Bouncing
   - Enemies
-  - 
-  - 
+  - Hazards
+  - Snowballs
   - 
   - 
   - 
@@ -47,8 +47,8 @@ TagManager:
   - name: Platforms
     uniqueID: 302812409
     locked: 0
-  - name: Climbing
-    uniqueID: 3005754703
+  - name: Hazards
+    uniqueID: 46312843
     locked: 0
   - name: Enemies
     uniqueID: 160416105

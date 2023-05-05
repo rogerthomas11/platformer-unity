@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2019221541645523301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8513465804203944242}
+  m_Layer: 0
+  m_Name: LaunchSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8513465804203944242
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019221541645523301}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.317, y: -0.294, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5926818167039381232}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5926818167039381245
 GameObject:
   m_ObjectHideFlags: 0
@@ -16,7 +47,7 @@ GameObject:
   - component: {fileID: 5926818167418728764}
   - component: {fileID: 3790765473989433851}
   - component: {fileID: 7562062019033069906}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +65,8 @@ Transform:
   m_LocalPosition: {x: -7.738, y: -2.541, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8513465804203944242}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -98,7 +130,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1688941581
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 5
   m_Sprite: {fileID: -6367560908665664636, guid: d348dff3819df794186a80cb95777629, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -192,6 +224,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runSpeed: 8
   jumpSpeed: 18
+  deathLaunch: {x: 20, y: 20}
+  snowball: {fileID: 3886545099495441035, guid: 86fa81f616fb37d49885676eeb1d3797, type: 3}
+  launchSpawn: {fileID: 8513465804203944242}
 --- !u!61 &7562062019033069906
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -201,7 +236,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 5926818167039381245}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 31ab6ca735c9f7b4fb87ab12da5f4f99, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
